@@ -44,4 +44,4 @@ include = ["toxicsecrets"]
 version = {attr = "toxicsecrets.__version__"}
 
 [project.scripts]
-toxicslave = "toxicsecrets.cmds:main"%
+toxicslave = "toxicsecrets.cmds:main"
