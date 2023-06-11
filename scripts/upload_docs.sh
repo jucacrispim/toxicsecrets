@@ -1,6 +1,6 @@
 #!/bin/bash
 
-project=toxicslave
+project=toxicsecrets
 cd docs/build
 mv html $project
 tar -czf docs.tar.gz $project
