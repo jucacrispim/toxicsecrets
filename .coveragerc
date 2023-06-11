@@ -1,0 +1,3 @@
+[run]
+branch=True
+omit=toxicsecrets/__init__.py,toxicsecrets/cmds.py

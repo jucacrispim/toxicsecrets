@@ -1,0 +1,23 @@
+language: python
+
+versions:
+  - '3.11'
+
+steps:
+  - name: Linter checks
+    command: ./scripts/run_linter.sh
+
+  - name: Code complexity checks
+    command: xenon toxicbuild -b B
+
+  - name: Unit tests & coverage
+    command: ./scripts/check_coverage.sh
+
+  - name: Functional tests
+    command: pytest tests/functional
+
+  - name: Build docs
+    command: ./scripts/build_docs.sh
+
+  - name: Upload docs
+    command: ./scripts/upload_docs.sh
