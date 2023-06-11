@@ -1,5 +1,5 @@
-Toxicslave config
-=================
+Toxicsecrets config
+===================
 
 The configuration of toxicsecrets is done using the a configuration file. The configuration
 file can be passed using the  ``-c`` flag to the ``toxicsecrets`` command
