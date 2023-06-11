@@ -6,7 +6,7 @@ versions:
 
 steps:
   - name: setup db
-    command: ./build-scripts/db.sh
+    command: ./scripts/db.sh
 
   - name: Linter checks
     command: ./scripts/run_linter.sh
