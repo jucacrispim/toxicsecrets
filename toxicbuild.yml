@@ -4,6 +4,9 @@ docker: true
 versions:
   - '3.11'
 
+system_packages:
+  - make
+
 steps:
   - name: setup db
     command: ./scripts/db.sh

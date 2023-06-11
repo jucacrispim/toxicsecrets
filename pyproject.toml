@@ -32,6 +32,8 @@ classifiers = [
 
 ]
 
+[project.urls]
+"Homepage" = "https://docs.poraodjuca.dev/toxicsecrets/index.html"
 
 [tool.setuptools.packages.find]
 where = ["."]
@@ -40,3 +42,6 @@ include = ["toxicsecrets"]
 
 [tool.setuptools.dynamic]
 version = {attr = "toxicsecrets.__version__"}
+
+[project.scripts]
+toxicslave = "toxicsecrets.cmds:main"%
