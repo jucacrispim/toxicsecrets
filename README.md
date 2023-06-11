@@ -1,5 +1,5 @@
-Toxicslave: Secrets server for toxicbuild
-=========================================
+Toxicsecrets: Secrets server for toxicbuild
+===========================================
 
 Toxicsecrets is part of toxicbuild.
 
