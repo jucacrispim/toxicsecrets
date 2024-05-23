@@ -15,7 +15,7 @@ description = "toxicsecrets: secrets management for toxicbuild"
 readme = "README.md"
 
 dependencies = [
-    'toxicbuild-core==0.10.0',
+    'toxiccore==0.11.0',
     'mongomotor==0.16.2',
     'cryptography==41.0.0',
 ]

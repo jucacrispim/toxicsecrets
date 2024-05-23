@@ -1,4 +1,4 @@
-toxicbuild-core==0.10.0
+toxiccore==0.11.0
 mongomotor==0.16.2
 coverage==7.2.7
 iniconfig==2.0.0
