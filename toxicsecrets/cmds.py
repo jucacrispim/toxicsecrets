@@ -95,7 +95,7 @@ def create(root_dir, no_token=False):
     os.makedirs(root_dir)
 
     template_fname = 'toxicsecrets.conf.tmpl'
-    template_dir = pkg_resources.resource_filename('.',
+    template_dir = pkg_resources.resource_filename('toxicsecrets',
                                                    'templates')
     template_file = os.path.join(template_dir, template_fname)
     dest_file = os.path.join(root_dir, 'toxicsecrets.conf')

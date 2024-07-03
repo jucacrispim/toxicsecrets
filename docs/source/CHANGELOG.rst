@@ -3,6 +3,7 @@ Changelog
 
 * v0.10.2
 
+  - Fix environment creation
   - Fix packaging
 
 * v0.10.1
