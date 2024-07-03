@@ -39,6 +39,7 @@ classifiers = [
 where = ["."]
 exclude = ["tests*"]
 include = ["toxicsecrets"]
+namespaces = true
 
 [tool.setuptools.dynamic]
 version = {attr = "toxicsecrets.__version__"}

@@ -1,6 +1,10 @@
 Changelog
 =========
 
+* v0.10.2
+
+  - Fix packaging
+
 * v0.10.1
 
   - Loosen toxiccore version
