@@ -1,6 +1,10 @@
 Changelog
 =========
 
+* v0.10.3
+
+  - Update mongomotor
+
 * v0.10.2
 
   - Fix environment creation
