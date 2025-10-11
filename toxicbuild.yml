@@ -3,6 +3,8 @@ docker: true
 
 versions:
   - '3.11'
+  - '3.12'
+  - '3.13'
 
 extra_indexes:
   - 'https://pypi.poraodojuca.dev'
