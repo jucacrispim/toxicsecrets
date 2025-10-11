@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright 2023 Juca Crispim <juca@poraodojuca.net>
+# Copyright 2023 Juca Crispim <juca@poraodojuca.dev>
 
 # This file is part of toxicbuild.
 
@@ -19,7 +19,7 @@
 # pylint: disable=all
 
 import os
-import pkg_resources
+import importlib
 from secrets import token_urlsafe
 import shutil
 import sys
@@ -95,8 +95,8 @@ def create(root_dir, no_token=False):
     os.makedirs(root_dir)
 
     template_fname = 'toxicsecrets.conf.tmpl'
-    template_dir = pkg_resources.resource_filename('toxicsecrets',
-                                                   'templates')
+    template_dir = str(importlib.resources.files(
+        'toxicsecrets').joinpath('templates'))
     template_file = os.path.join(template_dir, template_fname)
     dest_file = os.path.join(root_dir, 'toxicsecrets.conf')
     shutil.copyfile(template_file, dest_file)

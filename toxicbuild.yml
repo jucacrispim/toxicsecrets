@@ -7,6 +7,12 @@ versions:
 extra_indexes:
   - 'https://pypi.poraodojuca.dev'
 
+branches:
+  - master
+  - bug-*
+  - feature-*
+  - refactor-*
+
 system_packages:
   - make
 
@@ -26,11 +32,35 @@ steps:
   - name: Functional tests
     command: pytest tests/functional
 
-  - name: Release
-    command: ./scripts/release.sh
 
-  - name: Build docs
-    command: ./scripts/build_docs.sh
+builders:
+  - name: Docs & Release
+    branches:
+      - release
 
-  - name: Upload docs
-    command: ./scripts/upload_docs.sh
+    platform: python3.13
+
+    envvars:
+      ENV: ci
+
+    plugins:
+      - name: apt-install
+        packages:
+          - build-essential
+          - curl
+
+      - name: python-venv
+        pyversion: python3.13
+        extra_indexes:
+          - 'https://pypi.poraodojuca.dev'
+
+    steps:
+      - name: Build docs
+        command: ./scripts/build_docs.sh
+        stop_on_fail: true
+
+      - name: upload docs to pdj pypi
+        command: ./scripts/release.sh
+
+      - name: upload docs
+        command: ./scripts/upload_docs.sh

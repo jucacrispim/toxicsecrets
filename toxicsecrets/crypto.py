@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright 2023 Juca Crispim <juca@poraodojuca.net>
+# Copyright 2023 Juca Crispim <juca@poraodojuca.dev>
 
 # This file is part of toxicbuild.
 
@@ -48,7 +48,7 @@ class Secret(Document):
         if inst:
             encr = inst._encrypt(value)
             inst.value = encr
-            inst.save()
+            await inst.save()
         else:
             inst = await cls.add(owner, key, value)
 

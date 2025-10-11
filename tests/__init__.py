@@ -14,13 +14,16 @@ from toxicsecrets import create_settings
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), '..', 'testdata')
 os.environ['TOXICSECRETS_SETTINGS'] = os.path.join(
     TEST_DATA_DIR, 'toxicsecrets.conf')
+
 create_settings()
+
+loop = asyncio.new_event_loop()
 
 
 def async_test(f):
 
     def wrapper(*args, **kwargs):
-        loop = asyncio.get_event_loop()
+        asyncio.set_event_loop(loop)
         loop.run_until_complete(f(*args, **kwargs))
 
     return wrapper
