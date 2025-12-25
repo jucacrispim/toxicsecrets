@@ -1,5 +1,5 @@
 toxiccore>=0.11.0
-mongomotor==0.16.2
+mongomotor==0.17.1
 coverage==7.2.7
 iniconfig==2.0.0
 packaging==23.1

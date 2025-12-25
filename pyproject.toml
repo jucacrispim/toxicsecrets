@@ -16,7 +16,7 @@ readme = "README.md"
 
 dependencies = [
     'toxiccore>=0.11.0',
-    'mongomotor==0.16.2',
+    'mongomotor>=0.17.1',
     'cryptography==41.0.0',
 ]
 
