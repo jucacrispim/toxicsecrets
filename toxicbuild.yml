@@ -9,6 +9,7 @@ versions:
 extra_indexes:
   - 'https://pypi.poraodojuca.dev'
 
+
 branches:
   - master
   - bug-*
