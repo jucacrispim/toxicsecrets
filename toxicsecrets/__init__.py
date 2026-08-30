@@ -5,7 +5,7 @@
 from mongomotor import connect
 from toxiccore.conf import Settings
 
-__version__ = '0.10.4'
+__version__ = '0.10.5'
 
 settings = None
 dbconn = None
