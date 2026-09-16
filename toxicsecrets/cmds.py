@@ -19,13 +19,13 @@
 # pylint: disable=all
 
 import os
-import importlib
+import importlib.resources
 from secrets import token_urlsafe
 import shutil
 import sys
 from time import sleep
 
-from mando import main, command
+from toxiccore.cmd import command, main
 
 from toxiccore.utils import (
     set_loglevel,
