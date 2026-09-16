@@ -1,6 +1,11 @@
 Changelog
 =========
 
+* v0.10.6
+
+  - Print token with a stable marker
+  - Remove python3.11 from CI
+
 * v0.10.5
 
   - Update toxiccore
