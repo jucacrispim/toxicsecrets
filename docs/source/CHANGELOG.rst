@@ -1,6 +1,11 @@
 Changelog
 =========
 
+* v0.10.8
+
+  - Call ``create_cryto_key`` from ``create`` so the ``{{CRYPTO_KEY}}``
+    placeholder is replaced in the generated config
+
 * v0.10.7
 
   - Fix missing ``importlib.resources`` import that broke ``create`` on a

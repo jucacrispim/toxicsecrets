@@ -106,6 +106,8 @@ def create(root_dir, no_token=False):
     else:
         access_token = create_token(dest_file)
 
+    create_cryto_key(dest_file)
+
     print('Done!')
     return access_token
 
