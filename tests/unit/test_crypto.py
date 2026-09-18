@@ -17,6 +17,7 @@
 # along with toxicbuild. If not, see <http://www.gnu.org/licenses/>.
 
 from unittest import TestCase
+from unittest.mock import Mock, patch
 
 from toxicsecrets import crypto
 
@@ -25,6 +26,18 @@ class CryptoTest(TestCase):
 
     def setUp(self):
         self.key = crypto.gen_key()
+
+    def test_get_crypto_key_with_str(self):
+        with patch.object(crypto, 'settings', Mock(CRYPTO_KEY='some-key')):
+            key = crypto._get_crypto_key()
+
+        self.assertEqual(key, b'some-key')
+
+    def test_get_crypto_key_with_bytes(self):
+        with patch.object(crypto, 'settings', Mock(CRYPTO_KEY=b'some-key')):
+            key = crypto._get_crypto_key()
+
+        self.assertEqual(key, b'some-key')
 
     def test_encryption(self):
         msg = b'some msg'
