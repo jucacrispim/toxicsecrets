@@ -66,12 +66,21 @@ class Secret(Document):
 
     def _encrypt(self, value):
         b = value.encode()
-        key = settings.CRYPTO_KEY
-        return encrypt(b, key)
+        return encrypt(b, _get_crypto_key())
 
     def _decrypt(self, value):
-        key = settings.CRYPTO_KEY
-        return decrypt(value, key).decode()
+        return decrypt(value, _get_crypto_key()).decode()
+
+
+def _get_crypto_key():
+    """Returns the crypto key as bytes. ``CRYPTO_KEY`` may be defined
+    either as bytes (older configs) or as str (generated configs)."""
+
+    key = settings.CRYPTO_KEY
+    if isinstance(key, str):
+        key = key.encode()
+
+    return key
 
 
 def gen_key():

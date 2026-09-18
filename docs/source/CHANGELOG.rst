@@ -1,6 +1,14 @@
 Changelog
 =========
 
+* v0.10.9
+
+  - Fix ``create_cryto_key``: it wrote a bcrypt hash instead of an AESGCM
+    key and crashed writing bytes into a text replacement. It now generates
+    a real key with ``gen_key()`` and writes it as a bytes literal
+  - ``crypto`` now coerces ``settings.CRYPTO_KEY`` to bytes (it may be
+    defined as ``str``)
+
 * v0.10.8
 
   - Call ``create_cryto_key`` from ``create`` so the ``{{CRYPTO_KEY}}``

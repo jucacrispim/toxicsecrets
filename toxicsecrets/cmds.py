@@ -69,19 +69,21 @@ def create_cryto_key(conffile, show_key=False):
     :param conffile: The path for the toxicsecrets.conf
     :param --show-key: Show the encryption key?
     """
-    access_token = token_urlsafe()
-    encrypted_token = bcrypt_string(access_token)
+    from toxicsecrets.crypto import gen_key
 
-    with open(conffile, 'rb+') as fd:
+    crypto_key = gen_key()
+
+    with open(conffile, 'r') as fd:
         content = fd.read()
-        content = content.replace(b'{{CRYPTO_KEY}}', encrypted_token)
-        fd.seek(0)
+
+    content = content.replace('{{CRYPTO_KEY}}', repr(crypto_key))
+    with open(conffile, 'w') as fd:
         fd.write(content)
 
     if show_key:
-        print('Created key:{}'.format(encrypted_token))
+        print('Created key:{}'.format(repr(crypto_key)))
 
-    return access_token
+    return crypto_key
 
 
 @command
